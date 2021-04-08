@@ -17,9 +17,18 @@ r1=100
 r2=0.5
 i1=v/r1;
 i2=v/r2;
-%plot(v,i1)
-%hold on
-%plot(v,i2)
+
+fig=1;
+figure (fig);
+ 
+plot(v,i1)
+hold on
+plot(v,i2)
+title("Ejercicio 1")
+xlabel("Volaje (V)")
+ylabel("Corriente (A)")
+hold off
+
 %ejercicio 1, seccion Potencia
 disp("Ejercicio 1. Potencia\n")
 E=420 %Julios 
@@ -79,15 +88,25 @@ r1=20;
 r2=2;
 i1=v1/r1;
 i2=v2/r2;
-%%plot(v1,i1)
-%hold on
-%plot(v2,i2)
+
+fig++;
+figure(fig)
+plot(v1,i1)
+hold on
+plot(v2,i2)
+title ("Ejercicio 15")
+hold off
 
 disp("Ejercicio 17")
 r=2; %kOhms
 i=0:0.1:400; %mA
 v=i*r;
+
+fig++;
+figure (fig)
 plot(v,i)
+title("Ejercicio 17")
+
 
 %%%----S: Potencia----%%%
 disp("Ejercicio 21")
@@ -117,21 +136,39 @@ I=sqrt(P/r)
 
 disp("Ejercicio 29")
 r=2.2%kOhms
-E=42 %mW
+P=42 %mW
+v=sqrt(P*r)
 %%%%%%%%%%%%%VVVVVVVV??????????
 
 disp("Ejercicio 31")
 
 
 disp("Ejercicio 33")
+
+
+
 V=3%V
-E=0.4%mW
+P=0.4%mW/s  
 %a)
-I=E/V %mA
+I=P/V %mA
 %b)
-Aph=(I/100)/500%A/h
+%1Wh=3600Ws
+%XWH-0.4Ws
+%V*Ah=Wh
+wh=0.4/3600
+Pb=wh*500
+Ah=Pb/3
 
 disp("Ejercicio 35")
 r=100;%Ohms
-I=0:0.1:100;
-w=I*I*r;%%????????????????????????????????????????
+I=0:0.01:.100;%100mA=0.100A
+P=I.*I*r;
+
+fig++;
+figure(fig)
+plot(I,P)
+title("Potencia de un Resistor de 100\ohm")
+xlabel("Corriente (A)")
+ylabel("Potencia (W)")
+
+%%????????????????????????????????????????
